@@ -1,0 +1,23 @@
+<div class="controls-wrap">
+    <h3 class="title">Controls:</h3>
+    <div class="btn-grp">
+        <div class="left-btn-wrap">
+            <button class="direction left" type="button" (click)="moveUser(directions.LEFT)">
+                <app-svg-icon [name]="'arrow-left-duotone'"></app-svg-icon>
+            </button>
+        </div>
+        <div class="vertical-btn-wrap">
+            <button class="direction up" type="button" (click)="moveUser(directions.UP)">
+                <app-svg-icon [name]="'arrow-up-duotone'"></app-svg-icon>
+            </button>
+            <button class="direction down"type="button" (click)="moveUser(directions.DOWN)">
+                <app-svg-icon [name]="'arrow-down-duotone'"></app-svg-icon>
+            </button>
+        </div>
+        <div class="right-btn-wrap">
+            <button class="direction right" type="button" (click)="moveUser(directions.RIGHT)">
+                <app-svg-icon [name]="'arrow-right-duotone'"></app-svg-icon>
+            </button>
+        </div>
+    </div>
+</div>

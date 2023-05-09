@@ -1,0 +1,48 @@
+<div class="quiz-wrapper">
+    <div class="popup-wrap">
+        <div class="popup-content">
+            <div class="banner"></div>
+            <div class="quiz-content">
+                <div class="question-wrap">
+                    <p class="question">{{question?.text}}</p>
+                    <div class="audio-btn-wrap">
+                        <button 
+                            class="audio-btn" 
+                            (click)="playQuestionAudio()"
+                            [disabled]="quizState === formStates.SUBMITTED_CORRECT"
+                        >Listen again</button>
+                    </div>
+                </div>
+                <div class="option-group">
+                    <label 
+                        class="option-label" 
+                        *ngFor="let option of question?.options; let i = index" 
+                        [for]="'option_'+i"                        
+                        [ngClass]="{ 
+                            'selected': answerChosen.value === i,
+                            'correct': quizState === formStates.SUBMITTED_CORRECT && submittedAnswer === i,
+                            'incorrect': quizState === formStates.SUBMITTED_INCORRECT && submittedAnswer === i
+                        }"
+                    >
+                        <p class="option-text">{{option.text}}</p>
+                        <input 
+                            [id]="'option_'+i"
+                            class="option-radio" 
+                            type="radio" 
+                            [value]="i" 
+                            [formControl]="answerChosen"
+                        />
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="confirm-btn-wrap">
+        <button 
+            class="confirm-btn" 
+            [class.disabled]="!answerChosen.valid"
+            [disabled]="!answerChosen.valid"
+            (click)="onSubmit()"
+        >Confirm</button>
+    </div>
+</div>

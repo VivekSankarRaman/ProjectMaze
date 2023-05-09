@@ -1,0 +1,56 @@
+:host{
+    --tiles-per-row: 10;
+    --icon-width: 75%;
+    --icon-height: 75%;
+}
+
+.maze-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
+}
+.row{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.tile{
+    position: relative;
+    width: calc((1/var(--tiles-per-row, 1))*100%);
+    height: 100%;
+    border: 1px solid white;
+    --icon-fill: var(--primary-color);
+}
+
+.question-icon-wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    --icon-width: 75%;
+    --icon-height: 75%;
+    z-index: 2;
+}
+.question-icon-wrap.complete{
+    opacity: 0.5;
+}
+
+.user-icon, .finish-flag{
+    position: absolute;
+    width: calc((1/var(--tiles-per-row, 1))*100%);
+    height: calc((1/var(--tiles-per-row, 1))*100%);
+}
+
+.user-icon{
+    --icon-fill: black;
+    z-index: 99;
+    transition: all 0.3s linear;
+}
+
+.finish-flag{
+    --icon-fill: var(--primary-color);
+    z-index: 9;
+}
+

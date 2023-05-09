@@ -1,0 +1,19 @@
+<div class="game-wrap">
+    <section class="maze-wrap">
+        <app-maze 
+            [mazeGrid]="mazeConfig" 
+            [finish]="finishPosition" 
+            [userPosition]="currentPosition"
+        ></app-maze>
+    </section>
+    <section class="controls-wrap">
+        <app-controls (movePlayer)="onMovePlayer($event)"></app-controls>
+    </section>
+</div>
+<div class="quiz-wrap" *ngIf="currentTile?.puzzle?.isComplete === false">
+    <app-quiz [question]="currentTile.puzzle?.question" (quizComplete)="onQuizComplete()"></app-quiz>
+</div>
+
+<div class="success-wrap" *ngIf="showSuccess">
+    <app-success (exit)="showSuccess = false;"></app-success>
+</div>

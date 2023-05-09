@@ -1,0 +1,33 @@
+.controls-wrap{
+    padding: 1rem;
+    background: #fff;
+}
+
+.title{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-grp{
+    display: flex;
+    align-items: center;
+    gap: 7.5px;
+}
+
+.vertical-btn-wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 7.5px;
+}
+
+button.direction{
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    width: 75px;
+    height: 60px;
+    border: 0;    
+    cursor: pointer;
+    --icon-width: 75%;
+    --icon-height: 75%;
+    --fill: white;
+}
