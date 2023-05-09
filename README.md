@@ -24,9 +24,3 @@ To run the project locally, run the following commands:
 
 Then go to 'http://localhost:4200/' in your web browser.
 
-Once ready for submission, please upload to your own GitHub repository and either send us the link or invite the account https://github.com/IDLDevs to view.
-
-If you have any questions, please email: jacob.withers@ascentis.co.uk.
-
-Thanks,
-Jake (Jacob Withers)
