@@ -77,7 +77,7 @@ export class QuizComponent implements OnInit {
     this.audioService.playAudio(AnswerAudio[option.answer as ANSWER]);
     this.answerChosen.setValue(null, { emitEvent: false });
     if (this.quizState === FormState.SUBMITTED_CORRECT) {
-      this.answerChosen.disable();
+      this.answerChosen.disable({emitEvent: false});
       setTimeout(() => {
         this.quizComplete.emit(true);
       }, 2000);
