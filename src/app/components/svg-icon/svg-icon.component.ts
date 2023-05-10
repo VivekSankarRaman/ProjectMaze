@@ -30,7 +30,7 @@ export class SvgIconComponent implements OnChanges {
         const sanitizedcode = this.sanitizer.sanitize(SecurityContext.NONE, value);
 
         this.svgIcon = this.sanitizer.bypassSecurityTrustHtml(sanitizedcode || '');
-        console.log('value...', this.svgIcon);
+        // console.log('value...', this.svgIcon);
       });
   }
 
